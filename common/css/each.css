@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+
+/* ローディング画面 */
+#loading {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #000;
+	opacity: 1;
+
+/* 以下のコードを追加 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.spinner {
+  width: 150px;
+  height: 150px;
+	position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 100%;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+/* ローディングアニメーション */
+	@keyframes sk-scaleout {
+  0% {　　　　
+		transform: scale(0);
+		width: 1px;
+		height: 1px;　
+		opacity:1;
+  } 100% {
+		transform: scale(1.0);
+		opacity: 0;
+		width: 150px;
+		height: 150px;
+  }
+}
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*スクロール fadein */
+.fadein {
+  opacity : 0;
+  transform : translate(0, 100px);
+  transition : all 1s;
+}
+
+.fadein.active{
+  opacity : 1;
+  transform : translate(0, 0);
+}
+/*スクロール タイトルマーカー */
+
+.content .ttl {
+    background: -webkit-linear-gradient(left, rgb(255,250,153) 50%, transparent 50%);
+    background: -moz-linear-gradient(left, rgb(255,250,153) 50%, transparent 50%);
+    background: linear-gradient(left, rgb(255,250,153) 50%, transparent 50%);
+  background-repeat: no-repeat;
+  background-size: 200% .3em;
+    background-position: 100% .5em;
+    transition: 2s;
+}
+.content .ttl.active{
+    background-position: 0% .5em;
+}
+
+/* 共通 */
+body{font-size:12px;line-height: 166%;text-align: left;	-webkit-text-size-adjust: 100%; }
+a:link{color:#000000; text-decoration:none;}
+a:visited{color:#000000; text-decoration:none;}
+a:active{color:#000000; text-decoration:none;}
+a:hover{color:#000000; text-decoration:none;}
+
+img{
+max-width: 100%;
+height: auto;
+width :auto;
+}
+.lazy{opacity: 0;}
+.tel_no,.no-link{
+	cursor: default !important;
+	opacity: 1 !important;
+}
+
+.flex_aro{display: flex; justify-content: space-around;}
+.flex_bet{display: flex; justify-content: space-between;}
+.flex_wrap{display: flex; flex-wrap: wrap;}
+.flex_nowrap{display: flex; flex-flow: column nowrap;}
+
+.sp{
+  display:none;
+}
+.pc{
+  display:block;
+}
+
+.content .img {
+    margin: 0 auto 40px;
+    width: 330px;
+}
+
+/* 背景固定 */
+.fixed-bg {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg01 {
+  background-image: url(../img/bg01.jpg);
+}
+
+.bg02 {
+  background-image: url(../img/bg02.jpg);
+}
+
+
+
+/* 一文字ずつアニメーション */
+
+.typ {
+  opacity: 0;
+  }
+.typ span {
+  opacity: 0;
+  }
+
+@media screen and (max-width: 767px) {
+
+.sp{
+  display:block;
+}
+.pc{
+   display:none;
+}
+
+
+}
